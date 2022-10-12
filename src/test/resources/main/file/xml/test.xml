@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<accounting_documents>
+    <document type="INVOICE">
+        <number>НК15</number>
+        <date>12.10.2022</date>
+        <user>Васильев</user>
+        <summ>1437.74</summ>
+        <currency>USD</currency>
+        <rate>54.17</rate>
+        <goods>товар</goods>
+        <amount>74.12</amount>
+    </document>
+    <document type="PAYMENT_ORDER">
+        <number>178</number>
+        <date>12.10.2022</date>
+        <user>Галиев</user>
+        <summ>57789.15</summ>
+        <employee>Яровая</employee>
+    </document>
+    <document type="REQUEST_FOR_PAYMENT">
+        <number>НК15</number>
+        <date>12.10.2022</date>
+        <user>Васильев</user>
+        <summ>1437.74</summ>
+        <currency>USD</currency>
+        <rate>54.17</rate>
+        <partner>Антошин</partner>
+        <commission>150.0</commission>
+    </document>
+</accounting_documents>
