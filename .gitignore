@@ -1,0 +1,7 @@
+# Eclipse and IntelliJ IDEA folders/files
+
+target/
+.idea/
+.classpath
+.project
+.settings/
