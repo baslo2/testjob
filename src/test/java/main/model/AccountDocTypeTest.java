@@ -22,5 +22,4 @@ class AccountDocTypeTest {
     void existedType(String type) {
         assertNotNull(AccountDocType.getAccountDocType(type));
     }
-
 }

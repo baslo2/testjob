@@ -7,6 +7,7 @@ import java.awt.LayoutManager;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
+@SuppressWarnings("serial")
 public final class CustomJPanel extends JPanel {
 
     public enum PanelType {

@@ -36,7 +36,7 @@ public class XmlExporter {
 
     public String exportAllObjsToString() {
         try (ByteArrayOutputStream objsOutputStream = new ByteArrayOutputStream()) {
-            writeObjsToXmlOutput(objsOutputStream);
+            writeObjsToXmlFile(objsOutputStream);
             String xml = new String(objsOutputStream.toByteArray(),
                     StandardCharsets.UTF_8);
             return formatXML(xml);
@@ -47,7 +47,7 @@ public class XmlExporter {
         return null;
     }
 
-    private void writeObjsToXmlOutput(OutputStream objsOutputStream) {
+    private void writeObjsToXmlFile(OutputStream objsOutputStream) {
         try (XmlWriterAutoCloseWrapper xmlWriterAutoCloseWrapper = new XmlWriterAutoCloseWrapper(
                 XMLOutputFactory
                         .newInstance().createXMLStreamWriter(objsOutputStream,

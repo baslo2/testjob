@@ -1,11 +1,8 @@
 package main.model;
 
-import java.io.Serializable;
 import java.util.Date;
 
-public abstract class AbstractAccountDoc implements Serializable {
-
-    private static final long serialVersionUID = -4763490997796884347L;
+public abstract class AbstractAccountDoc {
 
     private AccountDocType type;
     private String number;

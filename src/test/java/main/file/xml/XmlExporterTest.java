@@ -12,7 +12,6 @@ public class XmlExporterTest extends AbstrectFileTest {
 
     @Test
     void exportAllObjToStringTest() throws Exception {
-
         XmlExporter exporter = new XmlExporter();
 
         String expected;
@@ -30,6 +29,6 @@ public class XmlExporterTest extends AbstrectFileTest {
 
         String actual = new String(exporter.exportAllObjsToString());
 
-        assertEquals(expected.strip(), actual.strip());
+        assertEquals(expected.trim(), actual.trim());
     }
 }

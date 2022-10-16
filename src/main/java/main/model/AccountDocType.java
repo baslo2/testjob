@@ -18,7 +18,7 @@ public enum AccountDocType {
 
     public static AccountDocType getAccountDocType(String type) {
         for (AccountDocType accountDocType : AccountDocType.values()) {
-            if (type.strip().equalsIgnoreCase(accountDocType.getType())) {
+            if (type.trim().equalsIgnoreCase(accountDocType.getType())) {
                 return accountDocType;
             }
         }

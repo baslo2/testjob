@@ -21,9 +21,9 @@ public abstract class AbstractDialog extends JDialog {
 
     public void init() {
         setTitle(title);
-        setVisible(true);
         setLocationRelativeTo(null);
         setLayout(new BorderLayout(COMPONENTS_GAP, COMPONENTS_GAP));
         setSize(widht, height);
+        setModal(true);
     }
 }

@@ -4,6 +4,7 @@ import java.awt.BorderLayout;
 
 import javax.swing.JFrame;
 
+@SuppressWarnings("serial")
 public final class CustomJFrame extends JFrame {
 
     private static final int WIDTH = 400;
@@ -15,7 +16,6 @@ public final class CustomJFrame extends JFrame {
     }
 
     public static CustomJFrame create(String title) {
-
         CustomJFrame frame = new CustomJFrame(title);
 
         frame.setSize(WIDTH, HEIGHT);
@@ -25,5 +25,4 @@ public final class CustomJFrame extends JFrame {
 
         return frame;
     }
-
 }

@@ -1,6 +1,6 @@
 package main.file.xml;
 
-import java.io.FileInputStream;
+import java.io.BufferedReader;
 import java.util.ArrayList;
 import java.util.Date;
 
@@ -23,14 +23,14 @@ import main.model.RequestForPayment;
 public final class XmlImporter {
 
     public ArrayList<AbstractAccountDoc> ImportDocsFromFile(
-            FileInputStream fileInputStream)
+            BufferedReader bReader)
             throws IllegalAccessException {
         try (XmlReaderAutoCloseWrapper xmlReaderAutoCloseWrapper = new XmlReaderAutoCloseWrapper(
                 XMLInputFactory.newInstance()
-                        .createXMLStreamReader(fileInputStream))) {
+                        .createXMLStreamReader(bReader))) {
             XMLStreamReader reader = xmlReaderAutoCloseWrapper.reader();
 
-            ArrayList<AbstractAccountDoc> docs = new ArrayList();
+            ArrayList<AbstractAccountDoc> docs = new ArrayList<>();
             AbstractAccountDoc doc = null;
 
             while (reader.hasNext()) {
@@ -178,15 +178,15 @@ public final class XmlImporter {
         int attrCount = resder.getAttributeCount();
         if (attrCount > 1) {
             throw new IllegalArgumentException(
-                    "Wrong attribute count int tag [%s] : %d"
-                            .formatted(resder.getName(), attrCount));
+                    String.format("Wrong attribute count int tag [%s] : %d",
+                            resder.getName(), attrCount));
         }
 
         String attrName = resder.getAttributeLocalName(0).toString();
         if (!Tag.TYPE.getTagName().equals(attrName)) {
             throw new IllegalArgumentException(
-                    "Incorrect atribute name for tag [%s] : %s"
-                            .formatted(resder.getName(), attrName));
+                    String.format("Incorrect atribute name for tag [%s] : %s",
+                            resder.getName(), attrName));
         }
     }
 
@@ -215,8 +215,9 @@ public final class XmlImporter {
             throws XMLStreamException {
         if (XMLStreamConstants.CHARACTERS != currentParseEvent) {
             throw new IllegalArgumentException(
-                    "Broken xml file: text area error in tag [%s]"
-                            .formatted(reader.getName()));
+                    String.format(
+                            "Broken xml file: text area error in tag [%s]",
+                            reader.getName()));
         }
     }
 }

@@ -17,8 +17,6 @@ import main.model.AbstractAccountDoc;
 @SuppressWarnings("serial")
 public class AbctacrtDialogAccountDoc extends AbstractDialog {
 
-    private static final int COMPONENTS_GAP = 2;
-
     private CustomJLabel lbNumber;
     private CustomJLabel lbDate;
     private CustomJLabel lbUser;
@@ -60,7 +58,6 @@ public class AbctacrtDialogAccountDoc extends AbstractDialog {
     }
 
     protected void createDataComponents() {
-
         lbNumber = CustomJLabel.create("Номер");
         lbDate = CustomJLabel.create("Дата");
         lbUser = CustomJLabel.create("Пользователь");
@@ -72,7 +69,6 @@ public class AbctacrtDialogAccountDoc extends AbstractDialog {
     }
 
     protected void createButtons() {
-
         btnOk = CustomJButton.create("Ok");
         btnOk.addActionListener(actionEvent -> {
             fillAccountDoc();
@@ -102,6 +98,7 @@ public class AbctacrtDialogAccountDoc extends AbstractDialog {
     protected void createDialog() {
         getContentPane().add(textPanel, BorderLayout.CENTER);
         getContentPane().add(buttonPanel, BorderLayout.SOUTH);
+        setVisible(true);
     }
 
     protected void fillAccountDoc() {

@@ -97,5 +97,4 @@ public class CustomJTableModel extends AbstractTableModel {
         docs.get(rowIndex).setMarkedForDelete((Boolean) aValue);
         fireTableCellUpdated(rowIndex, columnIndex);
     }
-
 }

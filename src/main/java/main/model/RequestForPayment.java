@@ -2,8 +2,6 @@ package main.model;
 
 public final class RequestForPayment extends AbstractAccountDocWithCurrency {
 
-    private static final long serialVersionUID = -7853924274551717257L;
-
     private String partner;
     private float commission;
 

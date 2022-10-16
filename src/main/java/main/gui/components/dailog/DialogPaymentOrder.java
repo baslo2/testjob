@@ -47,5 +47,4 @@ public class DialogPaymentOrder extends AbctacrtDialogAccountDoc {
     protected void createAccountDoc() {
         doc = new PaymentOrder();
     }
-
 }

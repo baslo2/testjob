@@ -3,6 +3,8 @@ package main.file.xml;
 import java.net.URISyntaxException;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.time.LocalDate;
+import java.time.ZoneId;
 import java.util.ArrayList;
 import java.util.Date;
 
@@ -26,8 +28,8 @@ public class AbstrectFileTest {
 
     @BeforeAll
     static void fillStorage() {
-
-        Date date = new Date(122, 9, 12);
+        Date date = Date.from(LocalDate.of(2022, 10, 12)
+                .atStartOfDay(ZoneId.systemDefault()).toInstant());
 
         Invoice invoice = new Invoice();
         invoice.setNumber("НК15");

@@ -39,7 +39,6 @@ public class DialogView extends AbstractDialog {
     }
 
     public void buildDialog() {
-
         init();
 
         AbstractAccountDoc doc = Storage.INSTANCE.getAll()

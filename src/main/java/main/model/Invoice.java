@@ -2,8 +2,6 @@ package main.model;
 
 public final class Invoice extends AbstractAccountDocWithCurrency {
 
-    private static final long serialVersionUID = 4658272974917963301L;
-
     private String goods;
     private float amount;
 

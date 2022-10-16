@@ -45,7 +45,7 @@ public enum Gui {
     private JButton btnDel;
     private JButton btnExit;
 
-    private JPanel textPanel;
+    private JPanel tablePanel;
     private JPanel btnPanel;
 
     private CustomJFrame frame;
@@ -55,7 +55,6 @@ public enum Gui {
     }
 
     public void buildGui() {
-
         createTable();
         createButtons();
         createPanels();
@@ -63,18 +62,16 @@ public enum Gui {
     }
 
     private void createTable() {
-
         table = new JTable();
         table.setModel(new CustomJTableModel(Storage.INSTANCE.getAll()));
         table.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
-        table.setAutoResizeMode(JTable.AUTO_RESIZE_OFF);
+        table.setAutoResizeMode(JTable.AUTO_RESIZE_LAST_COLUMN);
 
         scrollPane = new JScrollPane(table);
         tableModel = (AbstractTableModel) table.getModel();
     }
 
     private void createButtons() {
-
         btnInvoice = CustomJButton.create(Constants.INVOICE);
         btnInvoice.addActionListener(
                 actionEvent -> new DialogInvoice(Constants.INVOICE,
@@ -133,10 +130,9 @@ public enum Gui {
     }
 
     private void createPanels() {
-
-        textPanel = CustomJPanel.create(PanelType.FRAME_TEXT_FIELD);
-        textPanel.setLayout(new GridLayout());
-        textPanel.add(new JScrollPane(table), BorderLayout.CENTER);
+        tablePanel = CustomJPanel.create(PanelType.FRAME_TEXT_FIELD);
+        tablePanel.setLayout(new GridLayout());
+        tablePanel.add(scrollPane, BorderLayout.CENTER);
 
         btnPanel = CustomJPanel.create(PanelType.FRAME_BUTTON);
         btnPanel.add(btnInvoice);
@@ -150,10 +146,9 @@ public enum Gui {
     }
 
     private void createFrame() {
-
         frame = CustomJFrame.create("Test");
 
-        frame.getContentPane().add(textPanel, BorderLayout.CENTER);
+        frame.getContentPane().add(tablePanel, BorderLayout.CENTER);
         frame.getContentPane().add(btnPanel, BorderLayout.EAST);
 
         frame.setVisible(true);

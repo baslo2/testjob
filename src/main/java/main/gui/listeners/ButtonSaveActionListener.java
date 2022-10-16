@@ -20,7 +20,6 @@ public class ButtonSaveActionListener implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent event) {
-
         chooser = Property.fillAndCreateXmlChooser(chooser);
 
         int ret = chooser.showDialog(null, "Сохранить файл");
