@@ -32,30 +32,30 @@ public class AbstrectFileTest {
                 .atStartOfDay(ZoneId.systemDefault()).toInstant());
 
         Invoice invoice = new Invoice();
-        invoice.setNumber("НК15");
+        invoice.setNumber("NK15");
         invoice.setDate(date);
-        invoice.setUser("Васильев");
+        invoice.setUser("Vasiliev");
         invoice.setSumm((float) 1_437.74);
         invoice.setCurrency("USD");
         invoice.setRate((float) 54.17);
-        invoice.setGoods("товар");
+        invoice.setGoods("good");
         invoice.setAmount((float) 74.12);
 
         PaymentOrder paymentOrder = new PaymentOrder();
         paymentOrder.setNumber("178");
         paymentOrder.setDate(date);
-        paymentOrder.setUser("Галиев");
+        paymentOrder.setUser("Galiev");
         paymentOrder.setSumm((float) 57_789.15);
-        paymentOrder.setEmployee("Яровая");
+        paymentOrder.setEmployee("Yarovay");
 
         RequestForPayment forPayment = new RequestForPayment();
-        forPayment.setNumber("НК15");
+        forPayment.setNumber("NK15");
         forPayment.setDate(date);
-        forPayment.setUser("Васильев");
+        forPayment.setUser("Vasiliev");
         forPayment.setSumm((float) 1_437.74);
         forPayment.setCurrency("USD");
         forPayment.setRate((float) 54.17);
-        forPayment.setPartner("Антошин");
+        forPayment.setPartner("Antoshin");
         forPayment.setCommission((float) 150.00);
 
         docs.add(invoice);
