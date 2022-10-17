@@ -97,5 +97,6 @@ public class DialogView extends AbstractDialog {
 
         getContentPane().add(textPanel, BorderLayout.CENTER);
         getContentPane().add(btnPanel, BorderLayout.SOUTH);
+        setVisible(true);
     }
 }
