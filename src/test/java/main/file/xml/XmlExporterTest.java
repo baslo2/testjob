@@ -27,13 +27,8 @@ public class XmlExporterTest extends AbstrectFileTest {
             expected = sb.toString();
         }
 
-        String actual = new String(exporter.exportAllObjsToString());
+        String actual = exporter.exportAllObjsToString();
 
-        System.out.println("expected: ");
-        System.out.println(expected.trim());
-        System.out.println("actual: ");
-        System.out.println(actual.trim());
-
-        assertEquals(expected.trim(), actual.trim());
+        assertEquals(expected, actual);
     }
 }
